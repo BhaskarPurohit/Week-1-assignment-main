@@ -3,6 +3,15 @@
  * During this time the thread should not be able to do anything else.
  */
 
-function sleep (seconds) {
-
+function sleep(n){
+    let start = Date.now()
+    while(Date.now()- start < n*1000){
+        //do nothing
+    }
 }
+
+console.log("Start")
+
+sleep(5)
+
+console.log("End")
