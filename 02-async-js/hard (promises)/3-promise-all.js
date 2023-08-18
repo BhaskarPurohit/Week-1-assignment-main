@@ -4,19 +4,53 @@
  * Print how long it took for all 3 promises to resolve.
  */
 
+const startTime = performance.now()
 
 function waitOneSecond() {
+    return new Promise((resolve)=>{
+        setTimeout(()=>{
+            resolve("resolved after 1 seconds")
+
+        },1000)
+    })
 
 }
+
+waitOneSecond().then((result)=>{
+    console.log(result)
+})
 
 function waitTwoSecond() {
+    return new Promise((resolve)=>{
+        setTimeout(()=>{
+            resolve("resolved after 2 seconds")
+        },2000)
+    })
 
 }
+
+waitTwoSecond().then((result)=>{
+  console.log(result)
+
+}
+)
+
 
 function waitThreeSecond() {
+    return new Promise((resolve)=>{
+        setTimeout(()=>{
+            resolve("resolved after 3 seconds")
+        },3000)
+    })
 
 }
 
-function calculateTime() {
+waitThreeSecond().then((result)=>{
+    console.log(result)
+})
+
+
+function calculateTime(startTime) {
+    console.log(startTime - Date.now())
 
 }
